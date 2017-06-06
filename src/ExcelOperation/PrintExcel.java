@@ -1,13 +1,13 @@
-package woojinTT;
+package ExcelOperation;
 
 import java.util.ArrayList;
 
-public class printExcel {
+public class PrintExcel {
 
 	
-	public static void printExcel(ArrayList<DataObject> list ) {
+	public static void printExcel(ArrayList<ExcelDataObject> list ) {
 	
-		DataObject eo;
+		ExcelDataObject eo;
 		for(int i=0;i<list.size();i++)
 		{
 			eo = list.get(i);

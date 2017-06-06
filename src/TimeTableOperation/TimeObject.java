@@ -1,4 +1,4 @@
-package woojinTT;
+package TimeTableOperation;
 
 public class TimeObject {
 

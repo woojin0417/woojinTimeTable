@@ -1,22 +1,28 @@
-package woojinTT;
+package Main;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+import ExcelOperation.ExcelDataObject;
+import ExcelOperation.ExcelIO;
+import ExcelOperation.PrintExcel;
+import LectureFunction.LectureFunction;
+
 public class Main {
 	public static void main(String[] args) 
 	{	
 		new Main();
 	}
+	
 	Main()
 	{
 		boolean temp = false;
 		ExcelIO excel = new ExcelIO();
 		BufferedReader br;
 		String selectMenuNum;
-		ArrayList<DataObject> list= excel.bringData();
+		ArrayList<ExcelDataObject> list= excel.bringData();
 		LectureFunction lf = new LectureFunction(list);
 		while(!temp)
 		{
@@ -33,7 +39,7 @@ public class Main {
 				int numSelec = Integer.parseInt(selectMenuNum);		// String -> Integer Ä³½ºÆÃ
 				switch(numSelec)
 				{
-				case 1 : printExcel.printExcel(list); break;
+				case 1 : PrintExcel.printExcel(list); break;
 				case 2 : lf.ApplyLecture(2); break;
 				case 3 : lf.DeleteLecture (3); break;
 				case 4 : lf.ApplyLecture(4); break;

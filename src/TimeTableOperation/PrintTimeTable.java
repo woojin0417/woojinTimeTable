@@ -1,18 +1,21 @@
-package woojinTT;
+package TimeTableOperation;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+
+import ExcelOperation.ExcelDataObject;
+import ExcelOperation.ExcelIO;
  
-public class ViewTimeTable {
+public class PrintTimeTable {
 
 	ArrayList<TimeObject> schedule=new ArrayList<TimeObject>();
-	ArrayList<DataObject> LectureList = new ArrayList<DataObject>();
+	ArrayList<ExcelDataObject> LectureList = new ArrayList<ExcelDataObject>();
 	public String mon="";
 	public String tue="";
 	public String wed="";
 	public String thu="";
 	public String fri="";
-	public ViewTimeTable(ArrayList<DataObject> LectureList) {
+	public PrintTimeTable(ArrayList<ExcelDataObject> LectureList) {
  
 		schedule.add(new TimeObject("0교시 00:00 - 00:00","[   월요일   ]","[   화요일   ]","[   수요일   ]","[   목요일   ]","[   금요일   ]"));
 		schedule.add(new TimeObject("1교시 08:00 - 08:30", mon, tue, wed, thu, fri));
@@ -43,7 +46,7 @@ public class ViewTimeTable {
 
 	}
 	// 월 , 화, 수, 목,금 수업 
-	public boolean settingSchedule(ArrayList<DataObject> LectureList)
+	public boolean settingSchedule(ArrayList<ExcelDataObject> LectureList)
 		{
 			boolean settingFlag=false;
 			for(int i=0;i<LectureList.size();i++)

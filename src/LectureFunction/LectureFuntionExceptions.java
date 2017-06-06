@@ -1,12 +1,14 @@
-package woojinTT;
+package LectureFunction;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Constants {
+import ExcelOperation.ExcelDataObject;
+
+public class LectureFuntionExceptions {
 	
-	public boolean checkApply(ArrayList<DataObject> LectureList, String inputMajor, String inputLN, String inputD)
+	public boolean checkApply(ArrayList<ExcelDataObject> LectureList, String inputMajor, String inputLN, String inputD)
 	{
 		for(int i=0;i<LectureList.size();i++)
 		{

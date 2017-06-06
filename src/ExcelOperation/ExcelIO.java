@@ -1,12 +1,11 @@
-package woojinTT;
+package ExcelOperation;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-
-import woojinTT.DataObject;
+import TimeTableOperation.TimeObject;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -16,7 +15,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 public class ExcelIO {
-	ArrayList<DataObject> list;
+	ArrayList<ExcelDataObject> list;
 	FileInputStream inputExcel;
 	FileOutputStream outputExcel;
 	XSSFWorkbook workbook;
@@ -24,9 +23,9 @@ public class ExcelIO {
 	XSSFRow exRow;
 	XSSFCell exCell;
 	@SuppressWarnings({ "resource", "deprecation" })
-	public ArrayList<DataObject> bringData(){
+	public ArrayList<ExcelDataObject> bringData(){
 		
-		list=new ArrayList<DataObject>();
+		list=new ArrayList<ExcelDataObject>();
 		String filepath = "src/Sejong.xlsx";
 		try{
 			
@@ -35,7 +34,7 @@ public class ExcelIO {
 			workbook =new XSSFWorkbook(inputExcel);
 			
 
-			DataObject eo;
+			ExcelDataObject eo;
 			
 			for(int i=0;i<workbook.getNumberOfSheets();i++){
 				exSheet = workbook.getSheetAt(i);
@@ -43,7 +42,7 @@ public class ExcelIO {
 				for(int row=0;row<exSheet.getPhysicalNumberOfRows();row++){
 
 					exRow = exSheet.getRow(row);
-					eo = new DataObject();
+					eo = new ExcelDataObject();
 					String value;
 					
 					if(exRow!=null){

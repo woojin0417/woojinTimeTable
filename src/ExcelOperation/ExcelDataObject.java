@@ -1,6 +1,6 @@
-package woojinTT;
+package ExcelOperation;
 
-public class DataObject {
+public class ExcelDataObject {
 	private String  major;		//개설학과전공
 	private String  classNumber;	//학수번호
 	private String  classDivide;   //분반
